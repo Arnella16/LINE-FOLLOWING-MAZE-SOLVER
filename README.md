@@ -197,6 +197,7 @@ endmodule
 
 
 TESTBENCH:
+
 `include "project.v"
 module linefollower_tb;
 reg [0:3] LSRB;
@@ -223,7 +224,6 @@ initial begin
     LSRB=4'b0000;
     repeat(15)
     #10 LSRB=LSRB+4'b0001;
-
     $display("                                                                                                          ");
     $display("                                                                                                          ");
     $display("                                                                                                          ");
@@ -233,7 +233,6 @@ initial begin
     /* str:straight   lf:left   rg:right   ta:turn around   lf:left_motor_forward   lb:left_motor_backward  ll:left_motor_left   lr:left_motor_right   rf:right_motor_forward   rb:right_motor_backward   rl:right_motor_left   rr:right_motor_right  */ 
     $display("-------------------------------------------------------------------------------------------------------------");
     $monitor("    %b      %b       %b       %b     |  %b    %b    %b    %b    %b   |  %b   %b   %b   %b   %b  |  %b  %b  %b  %b | %b  %b  %b %b ",LSRB[0],LSRB[1],LSRB[2],LSRB[3],s[0], s[1],s[2], s[3],s[4],straight,stop,left,right,turn_around,left_motor_forward,left_motor_backward,left_motor_right,left_motor_left,right_motor_forward,right_motor_backward,right_motor_right,right_motor_left);
-
     LSRB[0]=0;LSRB[1]=1;LSRB[2]=0;LSRB[3]=0;
     #10 LSRB[0]=1;LSRB[1]=0;LSRB[2]=0;LSRB[3]=1;
     #10 LSRB[0]=0;LSRB[1]=1;LSRB[2]=0;LSRB[3]=1;
