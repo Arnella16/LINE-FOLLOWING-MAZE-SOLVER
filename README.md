@@ -21,6 +21,7 @@ Objectives of this project include, to create a robot that can autonomously navi
 
 •	The robot typically features a wheeled or tracked chassis that can move in all directions. The chassis may also include a power source (usually batteries), wheels or tracks for mobility, and space for mounting sensors and electronics.
 •	A maze is a tour puzzle in the form of a complex branching passage through which the solver must find a route.
+
 ![image](https://github.com/Arnella16/LINE-FOLLOWING-MAZE-SOLVER/assets/148844350/827cc09b-6cc5-418f-b646-1b6a8cf9f3c9)
 
  Sample Maze
