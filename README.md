@@ -206,7 +206,7 @@ wire straight,stop,left,right,turn_around;
 wire left_motor_forward,left_motor_backward,left_motor_right,left_motor_left;
 wire right_motor_forward,right_motor_backward,right_motor_right,right_motor_left;
 linefollower s1(LSRB,s,straight,stop,left,right,turn_around,left_motor_forward,left_motor_backward,left_motor_right,left_motor_left,right_motor_forward,right_motor_backward,right_motor_right,right_motor_left);
-	
+
 initial begin
     $dumpfile("linefollower.vcd");
     $dumpvars(0,linefollower_tb);
@@ -224,6 +224,7 @@ initial begin
     LSRB=4'b0000;
     repeat(15)
     #10 LSRB=LSRB+4'b0001;
+
     $display("                                                                                                          ");
     $display("                                                                                                          ");
     $display("                                                                                                          ");
