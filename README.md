@@ -1,9 +1,9 @@
 LINE FOLLOWING MAZE SOLVER
 
 TEAM MEMBERS:
-1. 221CS120, D Jubitha Sri, daravathjubithasri.221cs120@nitk.edu.in, 6300665112
-2. 221CS123, G Teja Sri, tejasrigarapati.221cs123@nitk.edu.in, 9391047854 
-3. 221CS155, S Vineela, sivvalavineela.221cs155@nitk.edu.in, 9014758772
+1. 221CS120, D Jubitha Sri
+2. 221CS123, G Teja Sri
+3. 221CS155, S Vineela
 
 
 ABSTRACT:
