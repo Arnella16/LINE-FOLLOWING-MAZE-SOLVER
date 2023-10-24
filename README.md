@@ -259,7 +259,6 @@ end
 initial #500 $finish;
 endmodule
 
-
 REFERENCES:
 •	https://www.researchgate.net/publication/345349518_Maze_Solving_Algorithm_for_Line_Following_Robot
 •	Digital Design - By Morris Mano and Michael Cilette
