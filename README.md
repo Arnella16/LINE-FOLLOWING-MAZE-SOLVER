@@ -1,9 +1,11 @@
 LINE FOLLOWING MAZE SOLVER
 
-TEAM MEMBERS:
-1. 221CS120, D Jubitha Sri
-2. 221CS123, G Teja Sri
-3. 221CS155, S Vineela
+TEAM DETAILS:
+Semester : 3rd Sem B.Tech CSE
+Section: S1
+Member-1: D Jubitha Sri, 221CS120, daravathjubithasri.221cs120@nitk.edu.in
+Member-2: G Teja Sri, 221CS123, tejasrigarapati.221cs123@nitk.edu.in
+Member-3: S Vineela, 221CS155, sivvalavineela.221cs155@nitk.edu.in
 
 
 ABSTRACT:
@@ -12,31 +14,6 @@ ABSTRACT:
           Line-following robots are designed to follow lines accurately, making them suitable for applications where precise path following is crucial, such as manufacturing, logistics, etc. These robots can adapt to various line configurations, making them versatile for different maze designs or path-following tasks.
 
 
-BRIEF DESCRIPTION:
-          An LFR (line-following robot) is a clever little gadget with a silicon brain that finds its way through an arbitrary maze.  LFR is an electro-mechanical device, typically consisting of three main subsystems. They are a drive system, an array of sensors, and a control system.The drive system has a mechanical chassis, motors, gears, and wheels. The chassis is usually designed to operate like a wheelchair, with two large drive wheels on either side of a lightweight frame. 
-
-Objectives of this project include, to create a robot that can autonomously navigate through a maze by following a designated path and to develop and fine-tune a control algorithm that can make real-time decisions based on sensor data.
-        
- The chassis is built to house the motors, gear system, batteries, and circuitry, and must also be small enough to manoeuvre within the constraints of the maze.The control system is a series of circuit boards functioning as the brain of the LFR. The control system runs a maze-solving algorithm (LSRB) based on the information received by the CPU (ARDUINO BOARD) from the sensors.The final sub-system is the sensors. They report to the CPU the current state of the surroundings where the walls and paths are. These are usually infrared sensors that pick up the track's reflected light.
-
-•	The robot typically features a wheeled or tracked chassis that can move in all directions. The chassis may also include a power source (usually batteries), wheels or tracks for mobility, and space for mounting sensors and electronics.
-•	A maze is a tour puzzle in the form of a complex branching passage through which the solver must find a route.
-
-![image](https://github.com/Arnella16/LINE-FOLLOWING-MAZE-SOLVER/assets/148844350/827cc09b-6cc5-418f-b646-1b6a8cf9f3c9)
-
- Sample Maze
-
-•	Line detection sensors are installed on the robot. These sensors typically consist of infrared sensors that can distinguish between the line and the surrounding surface. These sensors emit infrared light and measure the intensity of the reflected light. This contrast in intensity helps the robot determine its position relative to the line. Line detection sensors typically provide analog or digital output. Analog sensors offer a continuous range of values, while digital sensors provide a simple "line detected" or "line not detected" binary signal.
-![image](https://github.com/Arnella16/LINE-FOLLOWING-MAZE-SOLVER/assets/148844350/d5d573be-3b48-47bc-aea9-52068db29e1c)
-
-•	 This project typically involves a microcontroller (e.g., Arduino or Raspberry Pi) that processes data from the sensors and controls the robot's movements based on the programmed algorithm. It hosts the control algorithm, which is responsible for interpreting sensor data, performing calculations, and determining actions. This algorithm may involve PID control, finite-state machines, or other custom logic to keep the robot on the line and navigate turns effectively.
-•	It is hard to change the robot’s movement parameters when already implemented. The PID-based controller is made to control the motors speed. A PID Controller consists of Proportional Control, Integral Control, and Derivative Control. The Proportional control will respond proportionally to the system error. The Integral control will respond proportionally to the system’s sum of error. Meanwhile, the Derivative control will respond proportionally to the system’s error difference. A motor speed controller is designed based on this PID controller.
-
- Closed loop for speed controlling of robot
-![image](https://github.com/Arnella16/LINE-FOLLOWING-MAZE-SOLVER/assets/148844350/44dbdf4a-f791-4692-8767-5e3ea7811d16)
-
-•	In the above process, the algorithm calculates the error, which represents the difference between the robot's current position relative to the center of the line. This error is essential for determining how the robot should adjust its course. Using the error information, the algorithm calculates a control output. This control output typically represents the robot's speed and steering adjustments.
-•	The control output is translated into motor adjustments. If the robot deviates from the line to the right, for example, the algorithm may instruct the motors to steer the robot to the left to correct its course. The robot follows the calculated motor adjustments to stay on the line. As the robot encounters intersections, turns, or obstacles, the algorithm makes decisions to handle these situations, such as making the appropriate turns based on predefined rules or detecting obstacles and taking evasive action.
 WORKING:
 LSRB Algorithm:
 This LSRB algorithm can be simplified into these simple conditions:
@@ -80,7 +57,7 @@ fwd-Forward; bwd-Backward; rgt- Right; lft-Left.
 
 LOGISIM:
 
-PRE-DEFINED PATH
+PRE-DEFINED PATH (MAIN)
 ![PRE-DEFINED PATH](https://github.com/Arnella16/LINE-FOLLOWING-MAZE-SOLVER/assets/148844350/851ca450-c542-4ac0-b01a-56fdfb0bf5a7)
 
 SENSOR SYSTEM AND MOTORS
@@ -98,6 +75,7 @@ PATH GENERATOR
 PATH
 ![PATH](https://github.com/Arnella16/LINE-FOLLOWING-MAZE-SOLVER/assets/148844350/d8c47f04-78ea-4763-b33e-0d58b04c6116)
 
+
 VERILOG CODE:
 
 /* Line following Maze Solver using LSRB Algorithm
@@ -107,7 +85,7 @@ module linefollower(LSRB,s,straight,stop,left,right,turn_around,left_motor_forwa
 input [0:3] LSRB; // Next move input
 output [0:4] s; // 5-Sensors
 output straight; // Move forward
-output stop; // Stop	
+output stop; // Stop
 output left; // Turn left
 output right; // Turn right
 output turn_around; // Turn around
@@ -115,7 +93,6 @@ output reg left_motor_forward,left_motor_backward,left_motor_right,left_motor_le
 output reg right_motor_forward,right_motor_backward,right_motor_right,right_motor_left; // Specifies the direction of right motor
 
 //data flow modelling
-
 assign s[0]=(~LSRB[0]&LSRB[1])|(~LSRB[0]&~LSRB[2]&~LSRB[3]);
 assign s[1]=(~LSRB[0]&~LSRB[1]&LSRB[2])|(~LSRB[0]&~LSRB[1]&~LSRB[3]);
 assign s[3]=(~LSRB[0]&~LSRB[1]&~LSRB[2]&~LSRB[3]);
@@ -129,7 +106,6 @@ assign right = ~s[0]&s[1]&s[2]&~s[3]&~s[4];
 assign turn_around = s[2]&~s[0]&~s[1]&~s[3]&~s[4];
 
 //behavioural modelling
-
 always @(*)
 begin
     if(stop && !straight && !left && !right && !turn_around) begin
@@ -258,6 +234,7 @@ end
 
 initial #500 $finish;
 endmodule
+
 
 REFERENCES:
 •	https://www.researchgate.net/publication/345349518_Maze_Solving_Algorithm_for_Line_Following_Robot
