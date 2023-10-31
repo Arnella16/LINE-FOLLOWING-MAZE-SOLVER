@@ -19,9 +19,7 @@ Member-3: S Vineela, 221CS155, sivvalavineela.221cs155@nitk.edu.in
 ABSTRACT:
            
            This Line-following Maze Solver project will delve into a line-following robot's design, construction, and programming, emphasizing the key components and algorithms required for successful maze navigation.The robot system configuration consists of input, controller, and output devices.
-         
          In a line maze-solving robot, input devices are line sensors, and output ones are DC motors with drivers. The line sensors are a crucial part of the project, making the robot move steadily in the middle position of black lines without any lag. It must make real-time decisions about its movement based on the line's position, adjusting its speed and direction. The concept behind this project is inspired by various real-world applications, such as automated warehouse robots, self-driving cars, and industrial automation systems, which rely on similar principles of path following and obstacle avoidance.It provides a platform for experimenting with robotics and sensor integration for future applications. Line-following robots are often used in educational settings to teach students about robotics, programming, and automation concepts. It offers an affordable and accessible way to prototype autonomous systems, making it valuable for research and development in various industries.
-         
           Line-following robots are designed to follow lines accurately, making them suitable for applications where precise path following is crucial, such as manufacturing, logistics, etc. These robots can adapt to various line configurations, making them versatile for different maze designs or path-following tasks.
 
 
@@ -99,158 +97,302 @@ VERILOG CODE:
 
 /* Line following Maze Solver using LSRB Algorithm
 L-left, S-straight, R-right, B-back(turn around)
+
 Robot follows the above given priority if a junction is detected*/
-module linefollower(LSRB,s,straight,stop,left,right,turn_around,left_motor_forward,left_motor_backward,left_motor_right,left_motor_left,right_motor_forward,right_motor_backward,right_motor_right,right_motor_left);
+
+module linefollower(LSRB ,s ,straight ,stop ,left ,right ,turn_around ,left_motor_forward ,left_motor_backward ,left_motor_right ,left_motor_left ,right_motor_forward ,right_motor_backward ,right_motor_right ,right_motor_left);
+
 input [0:3] LSRB; // Next move input
+
 output [0:4] s; // 5-Sensors
+
 output straight; // Move forward
+
 output stop; // Stop
+
 output left; // Turn left
+
 output right; // Turn right
+
 output turn_around; // Turn around
+
 output reg left_motor_forward,left_motor_backward,left_motor_right,left_motor_left; // Specifies the direction of left motor
+
 output reg right_motor_forward,right_motor_backward,right_motor_right,right_motor_left; // Specifies the direction of right motor
 
+
 //data flow modelling
+
 assign s[0]=(~LSRB[0]&LSRB[1])|(~LSRB[0]&~LSRB[2]&~LSRB[3]);
+
 assign s[1]=(~LSRB[0]&~LSRB[1]&LSRB[2])|(~LSRB[0]&~LSRB[1]&~LSRB[3]);
+
 assign s[3]=(~LSRB[0]&~LSRB[1]&~LSRB[2]&~LSRB[3]);
+
 assign s[4]=LSRB[0]|(~LSRB[1]&~LSRB[2]&~LSRB[3]);
+
 assign s[2]=s[0]|s[1]|s[3]|s[4]|LSRB[3];
 
 assign straight = s[0]&s[2]&~s[3]&~s[4];
+
 assign stop = s[0]&s[1]&s[2]&s[3]&s[4];
+
 assign left = s[2]&~s[3]&s[4];
+
 assign right = ~s[0]&s[1]&s[2]&~s[3]&~s[4];
+
 assign turn_around = s[2]&~s[0]&~s[1]&~s[3]&~s[4];
 
 //behavioural modelling
+
 always @(*)
+
 begin
+
     if(stop && !straight && !left && !right && !turn_around) begin
+    
         left_motor_forward=1'b0; // Stop if destination is reached
+        
         left_motor_backward=1'b0;
+        
         left_motor_left=1'b0;
+        
         left_motor_right=1'b0;
+        
         right_motor_forward=1'b0;
+        
         right_motor_backward=1'b0;
+        
         right_motor_left=1'b0;
+        
         right_motor_right=1'b0;
+    
     end
+    
+    
     else if(straight && !stop && !left && !right && !turn_around) begin
+    
         left_motor_forward=1'b1; // Move forward
+    
         left_motor_backward=1'b0;
+        
         left_motor_left=1'b0;
+        
         left_motor_right=1'b0;
+        
         right_motor_forward=1'b1;
+        
         right_motor_backward=1'b0;
+        
         right_motor_left=1'b0;
+        
         right_motor_right=1'b0;
+    
     end
+    
     else if(left && !straight && !stop && !right && !turn_around) begin
+    
         left_motor_forward=1'b0; // Turn left
+        
         left_motor_backward=1'b0;
+        
         left_motor_left=1'b1;
+        
         left_motor_right=1'b0;
+        
         right_motor_forward=1'b0;
+        
         right_motor_backward=1'b0;
+        
         right_motor_left=1'b1;
+        
         right_motor_right=1'b0;
+    
     end
+    
     else if(right && !straight && !stop && !left && !turn_around) begin
+    
         left_motor_forward=1'b0; // Turn right
+        
         left_motor_backward=1'b0;
+        
         left_motor_left=1'b0;
+        
         left_motor_right=1'b1;
+        
         right_motor_forward=1'b0;
+        
         right_motor_backward=1'b0;
+        
         right_motor_left=1'b0;
+        
         right_motor_right=1'b1;
+    
     end
+    
     else if(turn_around && !straight && !stop && !left && !right) begin
+        
         left_motor_forward=1'b1; // Turn around in clockwise direction if dead end is detected
+        
         left_motor_backward=1'b0;
+        
         left_motor_left=1'b0;
+        
         left_motor_right=1'b0;
+        
         right_motor_forward=1'b0;
+        
         right_motor_backward=1'b1;
+        
         right_motor_left=1'b0;
+        
         right_motor_right=1'b0;
+    
     end 
+    
     else begin
+    
         left_motor_forward=1'b0; 
+        
         left_motor_backward=1'b0;
+        
         left_motor_left=1'b0;
+        
         left_motor_right=1'b0;
+        
         right_motor_forward=1'b0;
+        
         right_motor_backward=1'b0;
+        
         right_motor_left=1'b0;
+        
         right_motor_right=1'b0;
+    
     end
+    
 end
+
 endmodule
 
 
 TESTBENCH:
 
 `include "project.v"
+
 module linefollower_tb;
+
 reg [0:3] LSRB;
+
 wire [0:4] s;
+
 wire straight,stop,left,right,turn_around;
+
 wire left_motor_forward,left_motor_backward,left_motor_right,left_motor_left;
+
 wire right_motor_forward,right_motor_backward,right_motor_right,right_motor_left;
-linefollower s1(LSRB,s,straight,stop,left,right,turn_around,left_motor_forward,left_motor_backward,left_motor_right,left_motor_left,right_motor_forward,right_motor_backward,right_motor_right,right_motor_left);
+
+linefollower s1(LSRB ,s ,straight , stop , left, right ,turn_around, left_motor_forward, left_motor_backward, left_motor_right, left_motor_left, right_motor_forward, right_motor_backward, right_motor_right, right_motor_left);
 
 initial begin
+    
     $dumpfile("linefollower.vcd");
+    
     $dumpvars(0,linefollower_tb);
+
 end
 
 initial begin
+
     $display("                                                                                                          ");
+    
     $display("                                                                                                          ");
+    
     $display("                                           LINE FOLLOWING MAZE SOLVER                                     ");
+    
     $display("   L       S       R       B     |           Sensor         |       Direction     |     Motor direction   ");
+    
     $display(" LSRB[0] LSRB[1] LSRB[2] LSRB[3] | s[0] s[1] s[2] s[3] s[4] |  str stop lf rg ta  | lf lb lr ll | rf rb rr rl");
-    /* str:straight   lf:left   rg:right   ta:turn around   lf:left_motor_forward   lb:left_motor_backward  ll:left_motor_left   lr:left_motor_right   rf:right_motor_forward   rb:right_motor_backward   rl:right_motor_left   rr:right_motor_right  */ 
+    
+    /* str:straight   lf:left   rg:right   ta:turn around   lf:left_motor_forward   lb:left_motor_backward  ll:left_motor_left   lr:left_motor_right   rf:r
+    ight_motor_forward   rb:right_motor_backward   rl:right_motor_left   rr:right_motor_right  */ 
+    
     $display("-------------------------------------------------------------------------------------------------------------");
-    $monitor("    %b      %b       %b       %b     |  %b    %b    %b    %b    %b   |  %b   %b   %b   %b   %b  |  %b  %b  %b  %b | %b  %b  %b  %b",LSRB[0],LSRB[1],LSRB[2],LSRB[3],s[0],s[1],s[2],s[3],s[4],straight,stop,left,right,turn_around,left_motor_forward,left_motor_backward,left_motor_right,left_motor_left,right_motor_forward,right_motor_backward,right_motor_right,right_motor_left);
+    
+    $monitor("    %b      %b       %b       %b     |  %b    %b    %b    %b    %b   |  %b   %b   %b   %b   %b  |  %b  %b  %b  %b | %b  %b  %b  %b",
+    LSRB[0],LSRB[1],LSRB[2],LSRB[3],s[0],s[1],s[2],s[3],s[4],straight,stop,left,right,turn_around,left_motor_forward,left_motor_backward,left_motor_right,left_motor_left
+    ,right_motor_forward,right_motor_backward,right_motor_right,right_motor_left);
+    
     LSRB=4'b0000;
+    
     repeat(15)
+    
     #10 LSRB=LSRB+4'b0001;
+    
     $display("                                                                                                          ");
+    
     $display("                                                                                                          ");
+    
     $display("                                                                                                          ");
+    
     $display("                                  LINE FOLLOWING MAZE SOLVER WITH PREDEFINED PATH                         ");
+    
     $display("   L       S       R       B     |           Sensor         |       Direction     |     Motor direction   ");
+    
     $display(" LSRB[0] LSRB[1] LSRB[2] LSRB[3] | s[0] s[1] s[2] s[3] s[4] |  str stop lf rg ta  | lf lb lr ll | rf rb rr rl");
-    /* str:straight   lf:left   rg:right   ta:turn around   lf:left_motor_forward   lb:left_motor_backward  ll:left_motor_left   lr:left_motor_right   rf:right_motor_forward   rb:right_motor_backward   rl:right_motor_left   rr:right_motor_right  */ 
+    
+    /* str:straight   lf:left   rg:right   ta:turn around   lf:left_motor_forward   lb:left_motor_backward  ll:left_motor_left   lr:left_motor_right   rf:r
+    ight_motor_forward   rb:right_motor_backward   rl:right_motor_left   rr:right_motor_right  */ 
+    
     $display("-------------------------------------------------------------------------------------------------------------");
-    $monitor("    %b      %b       %b       %b     |  %b    %b    %b    %b    %b   |  %b   %b   %b   %b   %b  |  %b  %b  %b  %b | %b  %b  %b %b ",LSRB[0],LSRB[1],LSRB[2],LSRB[3],s[0], s[1],s[2], s[3],s[4],straight,stop,left,right,turn_around,left_motor_forward,left_motor_backward,left_motor_right,left_motor_left,right_motor_forward,right_motor_backward,right_motor_right,right_motor_left);
+    
+    $monitor("    %b      %b       %b       %b     |  %b    %b    %b    %b    %b   |  %b   %b   %b   %b   %b  |  %b  %b  %b  %b | %b  %b  %b %b ",LS
+    RB[0],LSRB[1],LSRB[2],LSRB[3],s[0], s[1],s[2], s[3], s[4], straight, stop, left, right, turn_around, left_motor_forward, left_motor_backward, left_motor_right, left_motor_left, right_motor_forward, right_motor_backward, right_motor_right, right_motor_left);
+    
     LSRB[0]=0;LSRB[1]=1;LSRB[2]=0;LSRB[3]=0;
+    
     #10 LSRB[0]=1;LSRB[1]=0;LSRB[2]=0;LSRB[3]=1;
+    
     #10 LSRB[0]=0;LSRB[1]=1;LSRB[2]=0;LSRB[3]=1;
+    
     #10 LSRB[0]=0;LSRB[1]=0;LSRB[2]=1;LSRB[3]=1;
+    
     #10 LSRB[0]=0;LSRB[1]=1;LSRB[2]=0;LSRB[3]=1;
+    
     #10 LSRB[0]=1;LSRB[1]=0;LSRB[2]=0;LSRB[3]=1;
+    
     #10 LSRB[0]=0;LSRB[1]=1;LSRB[2]=0;LSRB[3]=1;
+    
     #10 LSRB[0]=1;LSRB[1]=0;LSRB[2]=1;LSRB[3]=1;
+    
     #10 LSRB[0]=0;LSRB[1]=1;LSRB[2]=0;LSRB[3]=1;
+    
     #10 LSRB[0]=0;LSRB[1]=0;LSRB[2]=0;LSRB[3]=1;
+    
     #10 LSRB[0]=0;LSRB[1]=1;LSRB[2]=1;LSRB[3]=1;
+    
     #10 LSRB[0]=1;LSRB[1]=0;LSRB[2]=1;LSRB[3]=1;
+    
     #10 LSRB[0]=0;LSRB[1]=1;LSRB[2]=1;LSRB[3]=1;
+    
     #10 LSRB[0]=1;LSRB[1]=0;LSRB[2]=1;LSRB[3]=1;
+    
     #10 LSRB[0]=0;LSRB[1]=1;LSRB[2]=0;LSRB[3]=1;
+    
     #10 LSRB[0]=1;LSRB[1]=1;LSRB[2]=0;LSRB[3]=1;
+    
     #10 LSRB[0]=0;LSRB[1]=1;LSRB[2]=0;LSRB[3]=1;
+    
     #10 LSRB[0]=0;LSRB[1]=0;LSRB[2]=1;LSRB[3]=1;
+    
     #10 LSRB[0]=0;LSRB[1]=1;LSRB[2]=0;LSRB[3]=1;
+    
     #10 LSRB[0]=0;LSRB[1]=0;LSRB[2]=0;LSRB[3]=0;
+
 end
+
 
 initial #500 $finish;
+
 endmodule
 
 
