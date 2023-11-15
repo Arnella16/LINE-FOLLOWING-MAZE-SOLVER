@@ -27,7 +27,7 @@ Member-3: S Vineela, 221CS155, sivvalavineela.221cs155@nitk.edu.in
 </details>
 
 
-**Working**
+<h3>Working</h3>
 <details>
            <summary>
                       Detail
