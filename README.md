@@ -16,15 +16,14 @@ Member-3: S Vineela, 221CS155, sivvalavineela.221cs155@nitk.edu.in
 </details>
 
 
-
-
-
-
-ABSTRACT:
-           
-           This Line-following Maze Solver project will delve into a line-following robot's design, construction, and programming, emphasizing the key components and algorithms required for successful maze navigation.The robot system configuration consists of input, controller, and output devices.
+<details>
+           <summary>
+                      Abstract
+           </summary>
+                This Line-following Maze Solver project will delve into a line-following robot's design, construction, and programming, emphasizing the key components and algorithms required for successful maze navigation.The robot system configuration consists of input, controller, and output devices.
          In a line maze-solving robot, input devices are line sensors, and output ones are DC motors with drivers. The line sensors are a crucial part of the project, making the robot move steadily in the middle position of black lines without any lag. It must make real-time decisions about its movement based on the line's position, adjusting its speed and direction. The concept behind this project is inspired by various real-world applications, such as automated warehouse robots, self-driving cars, and industrial automation systems, which rely on similar principles of path following and obstacle avoidance.It provides a platform for experimenting with robotics and sensor integration for future applications. Line-following robots are often used in educational settings to teach students about robotics, programming, and automation concepts. It offers an affordable and accessible way to prototype autonomous systems, making it valuable for research and development in various industries.
           Line-following robots are designed to follow lines accurately, making them suitable for applications where precise path following is crucial, such as manufacturing, logistics, etc. These robots can adapt to various line configurations, making them versatile for different maze designs or path-following tasks.
+</details>
 
 
 
