@@ -1,7 +1,20 @@
 LINE FOLLOWING MAZE SOLVER
 
 
-TEAM DETAILS:
+<details>
+<summary>Cool Dropdown</summary>
+Team Details: 
+           
+Semester : 3rd Sem B.Tech CSE
+
+Section: S1
+
+Member-1: D Jubitha Sri, 221CS120, daravathjubithasri.221cs120@nitk.edu.in
+
+Member-2: G Teja Sri, 221CS123, tejasrigarapati.221cs123@nitk.edu.in
+
+Member-3: S Vineela, 221CS155, sivvalavineela.221cs155@nitk.edu.in
+</details>
 
 Semester : 3rd Sem B.Tech CSE
 
