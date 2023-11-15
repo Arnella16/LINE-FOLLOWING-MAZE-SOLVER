@@ -1,6 +1,6 @@
 <h1>Line Following Maze Solver</h1>
 
-<h3>Team Details</h3>
+<h2>Team Details</h2>
 <details>
 <summary>Detail</summary>
            
@@ -16,7 +16,7 @@ Member-3: S Vineela, 221CS155, sivvalavineela.221cs155@nitk.edu.in
 </details>
 
 
-<h3>Abstract</h3>
+<h2>Abstract</h2>
 <details>
            <summary>
                       Detail
@@ -27,7 +27,7 @@ Member-3: S Vineela, 221CS155, sivvalavineela.221cs155@nitk.edu.in
 </details>
 
 
-<h3>Working</h3>
+<h2>Working</h2>
 <details>
            <summary>
                       Detail
@@ -71,7 +71,7 @@ FUNCTIONAL TABLE
 </details>
 
 
-<h3>Logisim Circuit Diagram</h3>
+<h2>Logisim Circuit Diagram</h2>
 <details>
            <summary>
                       Detail
@@ -102,7 +102,7 @@ PATH
 </details>
 
 
-<h3>Verilog Code</h3>
+<h2>Verilog Code</h2>
 <details>
            <summary>
                       Detail
@@ -411,7 +411,7 @@ endmodule
 
 
 
-<h3>References</h3>
+<h2>References</h2>
 <details>
            <summary>
                       Detail
