@@ -1,8 +1,8 @@
 LINE FOLLOWING MAZE SOLVER
 
-
+Team Details
 <details>
-<summary>Team details</summary>
+<summary>Detail</summary>
            
 Semester : 3rd Sem B.Tech CSE
 
@@ -16,9 +16,10 @@ Member-3: S Vineela, 221CS155, sivvalavineela.221cs155@nitk.edu.in
 </details>
 
 
+Abstract
 <details>
            <summary>
-                      Abstract
+                      Detail
            </summary>
                 This Line-following Maze Solver project will delve into a line-following robot's design, construction, and programming, emphasizing the key components and algorithms required for successful maze navigation.The robot system configuration consists of input, controller, and output devices.
          In a line maze-solving robot, input devices are line sensors, and output ones are DC motors with drivers. The line sensors are a crucial part of the project, making the robot move steadily in the middle position of black lines without any lag. It must make real-time decisions about its movement based on the line's position, adjusting its speed and direction. The concept behind this project is inspired by various real-world applications, such as automated warehouse robots, self-driving cars, and industrial automation systems, which rely on similar principles of path following and obstacle avoidance.It provides a platform for experimenting with robotics and sensor integration for future applications. Line-following robots are often used in educational settings to teach students about robotics, programming, and automation concepts. It offers an affordable and accessible way to prototype autonomous systems, making it valuable for research and development in various industries.
@@ -26,9 +27,10 @@ Member-3: S Vineela, 221CS155, sivvalavineela.221cs155@nitk.edu.in
 </details>
 
 
+Working
 <details>
            <summary>
-                      Working
+                      Detail
            </summary>
            LSRB Algorithm:
 
@@ -69,9 +71,10 @@ FUNCTIONAL TABLE
 </details>
 
 
+Logisim
 <details>
            <summary>
-                      Logisim
+                      Detail
            </summary>
            PRE-DEFINED PATH (MAIN)
 
@@ -99,8 +102,12 @@ PATH
 </details>
 
 
-VERILOG CODE:
-
+Verilog Code
+<details>
+           <summary>
+                      Detail
+           </summary>
+           
 /* Line following Maze Solver using LSRB Algorithm
 L-left, S-straight, R-right, B-back(turn around)
 
@@ -400,11 +407,17 @@ end
 initial #500 $finish;
 
 endmodule
+</details>
 
 
 
-REFERENCES:
 
+References
+<details>
+           <summary>
+                      Detail
+           </summary>
+           
 •	https://www.researchgate.net/publication/345349518_Maze_Solving_Algorithm_for_Line_Following_Robot
 
 •	Digital Design - By Morris Mano and Michael Cilette
@@ -414,3 +427,5 @@ REFERENCES:
 •	https://towardinfinity.medium.com/coding-a-line-follower-robot-using-lsrb-and-finding-the-shortest-path-d906ffec71d
 
 •	https://github.com/doaamagdy2024/Maze-Solver-Line-follower-Robot
+</details>
+
