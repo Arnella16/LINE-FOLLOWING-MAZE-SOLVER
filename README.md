@@ -1,4 +1,4 @@
-**Line** **Following** **Maze** **Solver**
+<h1>**Line** **Following** **Maze** **Solver**</h1>
 
 **Team** **Details**
 <details>
