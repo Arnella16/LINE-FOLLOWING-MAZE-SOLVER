@@ -2,7 +2,7 @@ LINE FOLLOWING MAZE SOLVER
 
 
 <details>
-<summary>Cool Dropdown</summary>
+<summary>Team details</summary>
 Team Details: 
            
 Semester : 3rd Sem B.Tech CSE
