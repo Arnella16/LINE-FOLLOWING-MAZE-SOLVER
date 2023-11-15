@@ -16,7 +16,7 @@ Member-3: S Vineela, 221CS155, sivvalavineela.221cs155@nitk.edu.in
 </details>
 
 
-**Abstract**
+<h3>Abstract</h3>
 <details>
            <summary>
                       Detail
@@ -71,7 +71,7 @@ FUNCTIONAL TABLE
 </details>
 
 
-**Logisim** **Circuit** **Diagram**
+<h3>Logisim Circuit Diagram</h3>
 <details>
            <summary>
                       Detail
@@ -102,7 +102,7 @@ PATH
 </details>
 
 
-**Verilog** **Code**
+<h3>Verilog Code</h3>
 <details>
            <summary>
                       Detail
@@ -411,7 +411,7 @@ endmodule
 
 
 
-**References**
+<h3>References</h3>
 <details>
            <summary>
                       Detail
