@@ -1,6 +1,6 @@
-*LINE* *FOLLOWING* *MAZE* *SOLVER*
+**LINE** **FOLLOWING** **MAZE** **SOLVER**
 
-*Team* *Details*
+**Team** **Details**
 <details>
 <summary>Detail</summary>
            
@@ -16,7 +16,7 @@ Member-3: S Vineela, 221CS155, sivvalavineela.221cs155@nitk.edu.in
 </details>
 
 
-*Abstract*
+**Abstract**
 <details>
            <summary>
                       Detail
@@ -27,7 +27,7 @@ Member-3: S Vineela, 221CS155, sivvalavineela.221cs155@nitk.edu.in
 </details>
 
 
-*Working*
+**Working**
 <details>
            <summary>
                       Detail
@@ -71,7 +71,7 @@ FUNCTIONAL TABLE
 </details>
 
 
-*Logisim* *Circuit* *Diagram*
+**Logisim** **Circuit** **Diagram**
 <details>
            <summary>
                       Detail
@@ -102,7 +102,7 @@ PATH
 </details>
 
 
-*Verilog* *Code*
+**Verilog** **Code**
 <details>
            <summary>
                       Detail
@@ -411,7 +411,7 @@ endmodule
 
 
 
-*References*
+**References**
 <details>
            <summary>
                       Detail
