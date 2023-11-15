@@ -69,9 +69,11 @@ FUNCTIONAL TABLE
 </details>
 
 
-LOGISIM:
-
-PRE-DEFINED PATH (MAIN)
+<details>
+           <summary>
+                      Logisim
+           </summary>
+           PRE-DEFINED PATH (MAIN)
 
 ![PRE-DEFINED PATH](https://github.com/Arnella16/LINE-FOLLOWING-MAZE-SOLVER/assets/148844350/851ca450-c542-4ac0-b01a-56fdfb0bf5a7)
 
@@ -94,7 +96,7 @@ PATH GENERATOR
 PATH
 
 ![PATH](https://github.com/Arnella16/LINE-FOLLOWING-MAZE-SOLVER/assets/148844350/d8c47f04-78ea-4763-b33e-0d58b04c6116)
-
+</details>
 
 
 VERILOG CODE:
