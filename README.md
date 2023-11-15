@@ -71,7 +71,7 @@ FUNCTIONAL TABLE
 </details>
 
 
-Logisim
+Logisim Circuit Diagram
 <details>
            <summary>
                       Detail
