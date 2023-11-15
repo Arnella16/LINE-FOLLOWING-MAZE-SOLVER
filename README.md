@@ -1,6 +1,6 @@
 <h2>Line Following Maze Solver</h2>
 
-<h4>Team Details</h4>
+<h3>Team Details</h3>
 <details>
 <summary>Detail</summary>
            
