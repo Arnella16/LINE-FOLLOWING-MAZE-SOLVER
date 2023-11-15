@@ -1,4 +1,4 @@
-**LINE** **FOLLOWING** **MAZE** **SOLVER**
+**Line** **Following** **Maze** **Solver**
 
 **Team** **Details**
 <details>
