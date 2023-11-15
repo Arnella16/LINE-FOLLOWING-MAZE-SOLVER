@@ -26,10 +26,11 @@ Member-3: S Vineela, 221CS155, sivvalavineela.221cs155@nitk.edu.in
 </details>
 
 
-
-WORKING:
-
-LSRB Algorithm:
+<details>
+           <summary>
+                      Working
+           </summary>
+           LSRB Algorithm:
 
 This LSRB algorithm can be simplified into these simple conditions:
 
@@ -65,7 +66,7 @@ FLOWCHART
 FUNCTIONAL TABLE
 
 <img width="422" alt="FUNCTIONAL TABLE" src="https://github.com/Arnella16/LINE-FOLLOWING-MAZE-SOLVER/assets/148844350/09227af1-42ae-41d6-971d-b477c2caf29e">
-
+</details>
 
 
 LOGISIM:
