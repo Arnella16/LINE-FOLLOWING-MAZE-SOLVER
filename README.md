@@ -108,7 +108,7 @@ PATH
                       Detail
            </summary>
            
-/* Line following Maze Solver using LSRB Algorithm
+`````/* Line following Maze Solver using LSRB Algorithm
 L-left, S-straight, R-right, B-back(turn around)
 
 Robot follows the above given priority if a junction is detected*/
